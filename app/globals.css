@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ecefe7;
+  --background-2: #e3e7dc;
+  --foreground: #1f2421;
+  --accent: #6e7f73;
+  --surface: #f4f6ee;
+  --wash: rgba(107, 122, 112, 0.08);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-body);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ecefe7;
+    --background-2: #e3e7dc;
+    --foreground: #1f2421;
+    --accent: #6e7f73;
+    --surface: #f4f6ee;
+    --wash: rgba(107, 122, 112, 0.08);
+  }
+}
+
+body {
+  background-color: var(--background);
+  background-image:
+    linear-gradient(180deg, var(--wash), transparent 45%),
+    linear-gradient(180deg, var(--background), var(--background-2));
+  color: var(--foreground);
+  font-family: var(--font-body), "Segoe UI", sans-serif;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
