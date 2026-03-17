@@ -1,38 +1,47 @@
 # Cash App
 
-Base Zero is a playful, profile-based budgeting UI built with Next.js. It highlights shared spending frameworks and an input-first flow where each expense stores an amount and a spend date.
+Aplicação de gestão financeira em Next.js com perfis persistidos, despesas, orçamento, cenários e definições em `pt-PT`.
 
-## What you can do
+## O que inclui
 
-- Choose a budget profile (Personal, Student, Family, Household)
-- Explore shared category frameworks across profiles
-- Enter amount + date per item
-- Preview a modern, responsive landing page
+- perfis de contexto (`Pessoal`, `Estudante`, `Família`, `Casa`)
+- despesas com criação, edição e exportação de resumo
+- orçamento por categoria com métricas derivadas
+- cenários simples de impacto mensal
+- definições de perfil e plano com reposição local
+- testes E2E com Playwright
 
-## Getting Started
-
-Install dependencies and run the dev server:
+## Arranque local
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open http://localhost:3000 in your browser.
-
-## Project Structure
-
-- `app/page.js` - main landing page layout and UI data
-- `app/layout.js` - font setup and metadata
-- `app/globals.css` - global styles and animations
-
-## Customization
-
-Update the profile cards, frameworks, and copy in `app/page.js`. The default categories and items are defined as arrays near the top of the file.
+Abrir `http://localhost:3000/visao/painel`.
 
 ## Scripts
 
-- `npm run dev` - start the development server
-- `npm run build` - create a production build
-- `npm run start` - run the production server
-- `npm run lint` - lint the project
+- `npm run dev` inicia o servidor de desenvolvimento
+- `npm run build` cria o build de produção
+- `npm run start` arranca a app em produção
+- `npm run lint` executa o ESLint
+- `npm run test:e2e:install` instala o Chromium para Playwright
+- `npm run test:e2e` executa a suite E2E
+- `npm run test:e2e:headed` executa a suite E2E com browser visível
+
+## Estrutura principal
+
+- `app/(app)` páginas e shell da aplicação
+- `config/routes.mjs` rotas canónicas e redirects legados
+- `lib/finance-store.js` estado persistido e cálculos derivados
+- `messages/pt-PT` copy e labels da interface
+- `tests/e2e` regressão funcional com Playwright
+
+## CI
+
+O repositório inclui um workflow GitHub Actions em `.github/workflows/ci.yml` que corre:
+
+- `npm run lint`
+- `npm run build`
+- `npm run test:e2e`

@@ -117,7 +117,10 @@ export default function SettingsPlan() {
     >
       <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
         <div className="space-y-4">
-          <div className="rounded-2xl border border-black/5 bg-white px-4 py-4">
+          <div
+            data-testid="current-plan-card"
+            className="rounded-2xl border border-black/5 bg-white px-4 py-4"
+          >
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
               {copy.currentPlanLabel}
             </p>
@@ -136,6 +139,7 @@ export default function SettingsPlan() {
               return (
                 <div
                   key={plan.title}
+                  data-testid={`plan-card-${plan.title}`}
                   className={`rounded-2xl border bg-white px-4 py-4 ${
                     isActive
                       ? "border-emerald-200/80 ring-2 ring-emerald-200/70"

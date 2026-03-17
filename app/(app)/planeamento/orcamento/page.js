@@ -39,6 +39,7 @@ export default function PlaneamentoBudget() {
           {activeProfileSnapshot.categoryBreakdown.map((item) => (
             <div
               key={item.category}
+              data-testid={`budget-card-${item.category}`}
               className="rounded-2xl border border-black/5 bg-white px-4 py-4"
             >
               <div className="flex flex-wrap items-center justify-between gap-3">
