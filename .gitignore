@@ -28,6 +28,10 @@
 
 # debug
 npm-debug.log*
+
+# Local directories
+baseZero/
+.idea/
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
