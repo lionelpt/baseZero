@@ -50,7 +50,10 @@ export default function DashboardClient() {
               </span>
               <h1
                 className="text-4xl font-semibold leading-tight text-slate-900 md:text-5xl font-[var(--font-display)]"
-                style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+                style={{
+                  fontFamily:
+                    '"SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+                }}
               >
                 {dashboardCopy.title}
               </h1>
