@@ -1,4 +1,4 @@
-# Cash App
+# baseZero
 
 Aplicação de gestão financeira em Next.js com perfis persistidos, despesas, orçamento, cenários e definições em `pt-PT`.
 

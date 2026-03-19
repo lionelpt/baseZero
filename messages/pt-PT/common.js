@@ -1,7 +1,7 @@
 import { routes } from "@/config/routes.mjs";
 
 export const metadata = {
-  title: "Cash App - Clareza para gerir o dinheiro",
+  title: "baseZero - Clareza para gerir o dinheiro",
   description: "Uma experiência simples para gerir o fluxo de caixa com clareza.",
 };
 

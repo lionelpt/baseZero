@@ -39,3 +39,6 @@ yarn-error.log*
 *.swp
 *.swo
 *~
+
+# Local nested repository
+baseZero/
