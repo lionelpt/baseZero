@@ -2,7 +2,7 @@ import { routes } from "@/config/routes.mjs";
 
 export const dashboardCopy = {
   badge: "Painel inicial",
-  title: "As suas finanças, com clareza.",
+  title: "finanças em decisões, dinheiro com clareza",
   description:
     "Esta página foca-se no essencial: escolher um perfil, aceder às ações principais e começar a registar sem ruído.",
   primaryActionLabel: "Adicionar despesa",
