@@ -50,7 +50,7 @@ export default function DashboardClient() {
               </span>
               <h1
                 className="text-4xl font-semibold leading-tight text-slate-900 md:text-5xl font-[var(--font-display)]"
-                style={{ fontFamily: '"Savoye LET", "Snell Roundhand", cursive' }}
+                style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
               >
                 {dashboardCopy.title}
               </h1>
