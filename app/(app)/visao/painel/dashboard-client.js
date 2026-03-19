@@ -48,7 +48,10 @@ export default function DashboardClient() {
               <span className="inline-flex items-center rounded-full border border-black/10 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">
                 {dashboardCopy.badge}
               </span>
-              <h1 className="text-4xl font-semibold leading-tight text-slate-900 md:text-5xl font-[var(--font-display)]">
+              <h1
+                className="text-4xl font-semibold leading-tight text-slate-900 md:text-5xl font-[var(--font-display)]"
+                style={{ fontFamily: '"Savoye LET", "Snell Roundhand", cursive' }}
+              >
                 {dashboardCopy.title}
               </h1>
               <p className="max-w-2xl text-base leading-relaxed text-slate-600">
