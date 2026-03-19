@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useAppState } from "@/lib/finance-store";
+import { validateProfileDetails } from "@/lib/validation/schemas";
 import { definicoesCopy } from "@/messages/pt-PT/definicoes";
 import ProfileRequiredState from "../../profile-required-state";
 import WindowShell from "../../window-shell";
@@ -14,7 +15,7 @@ function ProfileForm({ activeProfileName, activeProfile, updateProfileDetails })
     currency: activeProfile.details.currency,
     monthlyIncome: activeProfile.details.monthlyIncome.toString(),
   });
-  const [feedback, setFeedback] = useState("");
+  const [feedback, setFeedback] = useState(null);
 
   const updateField = (field, value) => {
     setForm((currentForm) => ({
@@ -24,13 +25,32 @@ function ProfileForm({ activeProfileName, activeProfile, updateProfileDetails })
   };
 
   const saveProfile = () => {
+    // Validação usando Zod
+    const validation = validateProfileDetails({
+      name: form.name,
+      email: form.email,
+      currency: form.currency,
+      monthlyIncome: Number(form.monthlyIncome),
+    });
+
+    if (!validation.success) {
+      setFeedback({
+        tone: "error",
+        message: validation.message,
+      });
+      return;
+    }
+
     updateProfileDetails(activeProfileName, {
       name: form.name,
       email: form.email,
       currency: form.currency,
       monthlyIncome: form.monthlyIncome,
     });
-    setFeedback("Alterações guardadas.");
+    setFeedback({
+      tone: "success",
+      message: "Alterações guardadas.",
+    });
   };
 
   return (

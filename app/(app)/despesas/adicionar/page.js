@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { routes } from "@/config/routes.mjs";
 import { useAppState } from "@/lib/finance-store";
+import { validateExpense } from "@/lib/validation/schemas";
 import { despesasCopy } from "@/messages/pt-PT/despesas";
 import ProfileRequiredState from "../../profile-required-state";
 import WindowShell from "../../window-shell";
@@ -35,7 +36,7 @@ function AddExpenseForm({ activeProfileName, activeProfile, addExpense, buildHre
   const copy = despesasCopy.add;
   const router = useRouter();
   const [form, setForm] = useState(() => buildInitialForm(activeProfile));
-  const [feedback, setFeedback] = useState("");
+  const [feedback, setFeedback] = useState(null);
   const categories = activeProfile
     ? Object.keys(activeProfile.budgetLimits)
     : copy.categoryOptions;
@@ -65,8 +66,21 @@ function AddExpenseForm({ activeProfileName, activeProfile, addExpense, buildHre
   };
 
   const persistExpense = (resetAfterSave) => {
-    if (!form.name.trim() || Number(form.amount) <= 0) {
-      setFeedback("Preencha descrição e valor antes de guardar.");
+    // Validação usando Zod
+    const validation = validateExpense({
+      name: form.name,
+      amount: Number(form.amount),
+      date: form.date,
+      category: form.category,
+      kind: form.kind,
+      notes: form.notes,
+    });
+
+    if (!validation.success) {
+      setFeedback({
+        tone: "error",
+        message: validation.message,
+      });
       return;
     }
 
@@ -81,13 +95,19 @@ function AddExpenseForm({ activeProfileName, activeProfile, addExpense, buildHre
     });
 
     if (!expenseId) {
-      setFeedback("Não foi possível guardar a despesa.");
+      setFeedback({
+        tone: "error",
+        message: "Não foi possível guardar a despesa.",
+      });
       return;
     }
 
     if (resetAfterSave) {
       setForm(buildInitialForm(activeProfile));
-      setFeedback(copy.successLabel);
+      setFeedback({
+        tone: "success",
+        message: copy.successLabel,
+      });
       return;
     }
 
@@ -201,7 +221,13 @@ function AddExpenseForm({ activeProfileName, activeProfile, addExpense, buildHre
             </button>
           </div>
           {feedback ? (
-            <p className="mt-3 text-sm text-slate-600">{feedback}</p>
+            <div className={`mt-3 rounded-lg px-3 py-2 text-sm font-medium ${
+              feedback.tone === "error"
+                ? "bg-red-50 text-red-700"
+                : "bg-green-50 text-green-700"
+            }`}>
+              {feedback.message}
+            </div>
           ) : null}
         </div>
       </div>

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { routes } from "@/config/routes.mjs";
 import { useAppState } from "@/lib/finance-store";
+import { validateExpense } from "@/lib/validation/schemas";
 import { despesasCopy } from "@/messages/pt-PT/despesas";
 import ProfileRequiredState from "../../profile-required-state";
 import WindowShell from "../../window-shell";
@@ -34,7 +35,7 @@ function EditExpenseForm({
   const [form, setForm] = useState(() =>
     buildForm(selectedExpense, categories[0] || copy.categoryOptions[0])
   );
-  const [feedback, setFeedback] = useState("");
+  const [feedback, setFeedback] = useState(null);
 
   const updateField = (field, value) => {
     setForm((currentForm) => ({
@@ -48,8 +49,22 @@ function EditExpenseForm({
   );
 
   const saveExpense = () => {
-    if (!form.name.trim() || Number(form.amount) <= 0) {
-      setFeedback("Preencha descrição e valor antes de guardar.");
+    // Validação usando Zod
+    const validation = validateExpense({
+      name: form.name,
+      amount: Number(form.amount),
+      date: form.date,
+      category: form.category,
+      kind: form.kind,
+      notes: form.notes,
+      id: selectedExpense.id,
+    });
+
+    if (!validation.success) {
+      setFeedback({
+        tone: "error",
+        message: validation.message,
+      });
       return;
     }
 
@@ -61,12 +76,18 @@ function EditExpenseForm({
       kind: form.kind,
       notes: form.notes,
     });
-    setFeedback("Alterações guardadas.");
+    setFeedback({
+      tone: "success",
+      message: "Alterações guardadas.",
+    });
   };
 
   const removeExpense = () => {
     deleteExpense(activeProfileName, selectedExpense.id);
-    setFeedback("Despesa removida.");
+    setFeedback({
+      tone: "success",
+      message: "Despesa removida.",
+    });
   };
 
   return (
@@ -206,7 +227,13 @@ function EditExpenseForm({
             </button>
           </div>
           {feedback ? (
-            <p className="mt-3 text-sm text-slate-600">{feedback}</p>
+            <div className={`mt-3 rounded-lg px-3 py-2 text-sm font-medium ${
+              feedback.tone === "error"
+                ? "bg-red-50 text-red-700"
+                : "bg-green-50 text-green-700"
+            }`}>
+              {feedback.message}
+            </div>
           ) : null}
         </div>
       </div>
