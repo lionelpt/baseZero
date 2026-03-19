@@ -1,4 +1,4 @@
-# Cash App
+# baseZero
 
 Base Zero is a playful, profile-based budgeting UI built with Next.js. It highlights shared spending frameworks and an input-first flow where each expense stores an amount and a spend date.
 
