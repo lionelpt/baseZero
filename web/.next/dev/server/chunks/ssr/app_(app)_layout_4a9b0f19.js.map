@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/lion/Documents/GitHub/Projects/baseZero/web/app/%28app%29/layout.js"],"sourcesContent":["import { Suspense } from \"react\";\nimport AppShell from \"./app-shell\";\n\nexport default function AppLayout({ children }) {\n  return (\n    <Suspense fallback={null}>\n      <AppShell>{children}</AppShell>\n    </Suspense>\n  );\n}\n"],"names":[],"mappings":";;;;;AAAA;;;;;;;;;AAGe,SAAS,UAAU,EAAE,QAAQ,EAAE;IAC5C,qBACE,8OAAC,iNAAQ;QAAC,UAAU;kBAClB,cAAA,8OAAC;sBAAU;;;;;;;;;;;AAGjB"}}]
+}

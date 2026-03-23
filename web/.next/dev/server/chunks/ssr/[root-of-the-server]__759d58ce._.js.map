@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 22, "column": 0}, "map": {"version":3,"sources":["file:///Users/lion/Documents/GitHub/Projects/baseZero/web/app/%28app%29/visao/page.js"],"sourcesContent":["import { redirect } from \"next/navigation\";\nimport { routes } from \"@/config/routes.mjs\";\n\nexport default function VisionIndex() {\n  redirect(routes.visao.painel);\n}\n"],"names":[],"mappings":";;;;AAAA;AAAA;AACA;;;AAEe,SAAS;IACtB,IAAA,iMAAQ,EAAC,2HAAM,CAAC,KAAK,CAAC,MAAM;AAC9B"}}]
+}
