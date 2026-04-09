@@ -1,5 +1,7 @@
 # baseZero
 
+English: [README.en.md](README.en.md)
+
 Aplicação de gestão financeira construída com Next.js, focada em simplicidade operacional e fluxos reais de planeamento mensal.
 
 Suporta perfis persistidos, gestão de despesas, orçamento por categoria, cenários de impacto e área de definições em português (pt-PT).
