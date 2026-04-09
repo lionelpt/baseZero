@@ -1,47 +1,115 @@
 # baseZero
 
-Aplicação de gestão financeira em Next.js com perfis persistidos, despesas, orçamento, cenários e definições em `pt-PT`.
+Aplicação de gestão financeira construída com Next.js, focada em simplicidade operacional e fluxos reais de planeamento mensal.
 
-## O que inclui
+Suporta perfis persistidos, gestão de despesas, orçamento por categoria, cenários de impacto e área de definições em português (pt-PT).
 
-- perfis de contexto (`Pessoal`, `Estudante`, `Família`, `Casa`)
-- despesas com criação, edição e exportação de resumo
-- orçamento por categoria com métricas derivadas
-- cenários simples de impacto mensal
-- definições de perfil e plano com reposição local
-- testes E2E com Playwright
+## Índice
 
-## Arranque local
+- [Visão Geral](#visão-geral)
+- [Stack Técnica](#stack-técnica)
+- [Funcionalidades](#funcionalidades)
+- [Quick Start](#quick-start)
+- [Scripts de Desenvolvimento](#scripts-de-desenvolvimento)
+- [Arquitetura e Estrutura](#arquitetura-e-estrutura)
+- [Qualidade e Testes](#qualidade-e-testes)
+- [CI](#ci)
+
+## Visão Geral
+
+O baseZero organiza o ciclo financeiro mensal em quatro áreas:
+
+1. Visão: síntese de estado e indicadores
+2. Movimentos/Despesas: registo e edição de despesas
+3. Planeamento: orçamento e simulação de cenários
+4. Definições: contexto de perfil e plano ativo
+
+## Stack Técnica
+
+| Área | Tecnologia |
+| --- | --- |
+| Framework | Next.js (App Router) |
+| Linguagem | JavaScript |
+| UI | React + CSS global |
+| Qualidade | ESLint |
+| Testes E2E | Playwright |
+| Idioma da UI | pt-PT |
+
+## Funcionalidades
+
+- Perfis de contexto: Pessoal, Estudante, Família, Casa
+- Despesas com criação, edição e exportação de resumo
+- Orçamento por categoria com métricas derivadas
+- Cenários simples para simular impacto mensal
+- Definições de perfil e plano com reposição local
+- Cobertura E2E para fluxos críticos
+
+## Quick Start
+
+Pré-requisitos:
+
+- Node.js 18+ (recomendado)
+- npm 9+
+
+Instalação e arranque:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abrir `http://localhost:3000/visao/painel`.
+Abrir no browser:
 
-## Scripts
+```text
+http://localhost:3000/visao/painel
+```
 
-- `npm run dev` inicia o servidor de desenvolvimento
-- `npm run build` cria o build de produção
-- `npm run start` arranca a app em produção
-- `npm run lint` executa o ESLint
-- `npm run test:e2e:install` instala o Chromium para Playwright
-- `npm run test:e2e` executa a suite E2E
-- `npm run test:e2e:headed` executa a suite E2E com browser visível
+## Scripts de Desenvolvimento
 
-## Estrutura principal
+| Script | Descrição |
+| --- | --- |
+| npm run dev | Inicia o servidor de desenvolvimento |
+| npm run build | Gera o build de produção |
+| npm run start | Arranca a aplicação em modo produção |
+| npm run lint | Executa validações com ESLint |
+| npm run test:e2e:install | Instala Chromium para Playwright |
+| npm run test:e2e | Executa a suite E2E |
+| npm run test:e2e:headed | Executa E2E com browser visível |
 
-- `app/(app)` páginas e shell da aplicação
-- `config/routes.mjs` rotas canónicas e redirects legados
-- `lib/finance-store.js` estado persistido e cálculos derivados
-- `messages/pt-PT` copy e labels da interface
-- `tests/e2e` regressão funcional com Playwright
+## Arquitetura e Estrutura
+
+```text
+app/(app)                 # Shell principal e páginas da aplicação
+config/routes.mjs         # Rotas canónicas e redirects legados
+lib/finance-store.js      # Estado persistido e cálculos derivados
+messages/pt-PT            # Labels, copy e mensagens da interface
+tests/e2e                 # Regressão funcional com Playwright
+```
+
+Fluxo funcional (alto nível):
+
+```mermaid
+flowchart LR
+	A[Perfil Ativo] --> B[Registo de Despesas]
+	B --> C[Orçamento por Categoria]
+	C --> D[Cenários de Impacto]
+	D --> E[Visão/Painel]
+```
+
+## Qualidade e Testes
+
+Executar validação local recomendada antes de abrir PR:
+
+```bash
+npm run lint
+npm run build
+npm run test:e2e
+```
 
 ## CI
 
-O repositório inclui um workflow GitHub Actions em `.github/workflows/ci.yml` que corre:
+O repositório inclui pipeline em .github/workflows/ci.yml com os seguintes passos:
 
-- `npm run lint`
-- `npm run build`
-- `npm run test:e2e`
+1. npm run lint
+2. npm run build
+3. npm run test:e2e
