@@ -9,8 +9,8 @@ import {
   buildSummaryFilename,
 } from "@/lib/profile-summary";
 import { despesasCopy } from "@/messages/pt-PT/despesas";
-import ProfileRequiredState from "../../profile-required-state";
-import WindowShell from "../../window-shell";
+import ProfileRequiredState from "../../profile-state";
+import WindowShell from "../../_components/window-shell";
 
 export default function DespesasList() {
   const copy = despesasCopy.list;

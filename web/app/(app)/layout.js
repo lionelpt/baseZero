@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import AppShell from "./app-shell";
+import AppShell from "./_components/app-shell";
 
 export default function AppLayout({ children }) {
   return (

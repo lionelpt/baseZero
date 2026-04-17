@@ -1,3 +1,6 @@
 {
-  "/(app)/visao/painel/page": "app/(app)/visao/painel/page.js"
+  "/(app)/movimentos/adicionar/page": "app/(app)/movimentos/adicionar/page.js",
+  "/(app)/movimentos/editar/page": "app/(app)/movimentos/editar/page.js",
+  "/(app)/movimentos/lista/page": "app/(app)/movimentos/lista/page.js",
+  "/(app)/planeamento/orcamento/page": "app/(app)/planeamento/orcamento/page.js"
 }

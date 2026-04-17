@@ -7,8 +7,8 @@ import {
   buildSummaryFilename,
 } from "@/lib/profile-summary";
 import { definicoesCopy } from "@/messages/pt-PT/definicoes";
-import ProfileRequiredState from "../../profile-required-state";
-import WindowShell from "../../window-shell";
+import ProfileRequiredState from "../../profile-state";
+import WindowShell from "../../_components/window-shell";
 
 function triggerSummaryDownload(profileName, summaryText) {
   const blob = new Blob([summaryText], { type: "text/plain;charset=utf-8" });

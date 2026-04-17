@@ -6,8 +6,8 @@ import { routes } from "@/config/routes.mjs";
 import { useAppState } from "@/lib/finance-store";
 import { validateExpense } from "@/lib/validation/schemas";
 import { despesasCopy } from "@/messages/pt-PT/despesas";
-import ProfileRequiredState from "../../profile-required-state";
-import WindowShell from "../../window-shell";
+import ProfileRequiredState from "../../profile-state";
+import WindowShell from "../../_components/window-shell";
 
 const shortcutCategories = {
   "Café": "Alimentação",

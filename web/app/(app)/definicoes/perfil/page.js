@@ -4,8 +4,8 @@ import { useState } from "react";
 import { useAppState } from "@/lib/finance-store";
 import { validateProfileDetails } from "@/lib/validation/schemas";
 import { definicoesCopy } from "@/messages/pt-PT/definicoes";
-import ProfileRequiredState from "../../profile-required-state";
-import WindowShell from "../../window-shell";
+import ProfileRequiredState from "../../profile-state";
+import WindowShell from "../../_components/window-shell";
 
 function ProfileForm({ activeProfileName, activeProfile, updateProfileDetails }) {
   const copy = definicoesCopy.perfil;

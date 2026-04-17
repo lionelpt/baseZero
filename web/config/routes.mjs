@@ -10,10 +10,10 @@ export const routes = {
     painel: "/visao/painel",
   },
   despesas: {
-    root: "/despesas",
-    lista: "/despesas/lista",
-    adicionar: "/despesas/adicionar",
-    editar: "/despesas/editar",
+    root: "/movimentos",
+    lista: "/movimentos/lista",
+    adicionar: "/movimentos/adicionar",
+    editar: "/movimentos/editar",
   },
   planeamento: {
     root: "/planeamento",
@@ -68,6 +68,16 @@ export const legacyRedirects = [
   {
     source: "/despesas/list",
     destination: routes.despesas.lista,
+    permanent: false,
+  },
+  {
+    source: "/despesas",
+    destination: routes.despesas.lista,
+    permanent: false,
+  },
+  {
+    source: "/despesas/:path*",
+    destination: "/movimentos/:path*",
     permanent: false,
   },
 ];

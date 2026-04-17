@@ -4,8 +4,8 @@ import Link from "next/link";
 import { routes } from "@/config/routes.mjs";
 import { useAppState } from "@/lib/finance-store";
 import { planeamentoCopy } from "@/messages/pt-PT/planeamento";
-import ProfileRequiredState from "../../profile-required-state";
-import WindowShell from "../../window-shell";
+import ProfileRequiredState from "../../profile-state";
+import WindowShell from "../../_components/window-shell";
 
 export default function PlaneamentoScenarios() {
   const copy = planeamentoCopy.cenarios;

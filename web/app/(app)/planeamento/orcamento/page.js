@@ -2,8 +2,8 @@
 
 import { useAppState } from "@/lib/finance-store";
 import { planeamentoCopy } from "@/messages/pt-PT/planeamento";
-import ProfileRequiredState from "../../profile-required-state";
-import WindowShell from "../../window-shell";
+import ProfileRequiredState from "../../profile-state";
+import WindowShell from "../../_components/window-shell";
 
 export default function PlaneamentoBudget() {
   const copy = planeamentoCopy.orcamento;
