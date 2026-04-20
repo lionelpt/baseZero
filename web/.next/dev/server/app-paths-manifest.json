@@ -1,6 +1,11 @@
 {
+  "/(app)/definicoes/perfil/page": "app/(app)/definicoes/perfil/page.js",
+  "/(app)/definicoes/plano/page": "app/(app)/definicoes/plano/page.js",
   "/(app)/movimentos/adicionar/page": "app/(app)/movimentos/adicionar/page.js",
   "/(app)/movimentos/editar/page": "app/(app)/movimentos/editar/page.js",
   "/(app)/movimentos/lista/page": "app/(app)/movimentos/lista/page.js",
-  "/(app)/planeamento/orcamento/page": "app/(app)/planeamento/orcamento/page.js"
+  "/(app)/planeamento/cenarios/page": "app/(app)/planeamento/cenarios/page.js",
+  "/(app)/planeamento/orcamento/page": "app/(app)/planeamento/orcamento/page.js",
+  "/(app)/planeamento/page": "app/(app)/planeamento/page.js",
+  "/(app)/visao/painel/page": "app/(app)/visao/painel/page.js"
 }

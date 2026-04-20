@@ -1,5 +1,13 @@
 {
   "app": {
+    "[project]/app/(app)/definicoes/perfil/page": [
+      "static/media/03bda585a99c6450-s.p.ad37b9d9.woff2",
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2"
+    ],
+    "[project]/app/(app)/definicoes/plano/page": [
+      "static/media/03bda585a99c6450-s.p.ad37b9d9.woff2",
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2"
+    ],
     "[project]/app/(app)/movimentos/adicionar/page": [
       "static/media/03bda585a99c6450-s.p.ad37b9d9.woff2",
       "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2"
@@ -12,7 +20,19 @@
       "static/media/03bda585a99c6450-s.p.ad37b9d9.woff2",
       "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2"
     ],
+    "[project]/app/(app)/planeamento/cenarios/page": [
+      "static/media/03bda585a99c6450-s.p.ad37b9d9.woff2",
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2"
+    ],
     "[project]/app/(app)/planeamento/orcamento/page": [
+      "static/media/03bda585a99c6450-s.p.ad37b9d9.woff2",
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2"
+    ],
+    "[project]/app/(app)/planeamento/page": [
+      "static/media/03bda585a99c6450-s.p.ad37b9d9.woff2",
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2"
+    ],
+    "[project]/app/(app)/visao/painel/page": [
       "static/media/03bda585a99c6450-s.p.ad37b9d9.woff2",
       "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2"
     ]
