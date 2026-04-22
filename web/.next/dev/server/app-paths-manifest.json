@@ -6,6 +6,5 @@
   "/(app)/movimentos/lista/page": "app/(app)/movimentos/lista/page.js",
   "/(app)/planeamento/cenarios/page": "app/(app)/planeamento/cenarios/page.js",
   "/(app)/planeamento/orcamento/page": "app/(app)/planeamento/orcamento/page.js",
-  "/(app)/planeamento/page": "app/(app)/planeamento/page.js",
   "/(app)/visao/painel/page": "app/(app)/visao/painel/page.js"
 }
